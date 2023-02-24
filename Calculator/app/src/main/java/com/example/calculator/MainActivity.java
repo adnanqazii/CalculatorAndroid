@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     double a = Double.parseDouble(no1.getText().toString());
                     double b = Double.parseDouble(no2.getText().toString());
-                    ans = a + b;
+                    Expression e= new Expression(a,b);
+
+                    ans = e.addition();
                 }
             }
         });
@@ -68,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     double a = Double.parseDouble(no1.getText().toString());
                     double b = Double.parseDouble(no2.getText().toString());
-                    ans = a - b;
+                    Expression e= new Expression(a,b);
+
+                    ans = e.subtraction();
+
                 }
             }
         });
@@ -85,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     double a = Double.parseDouble(no1.getText().toString());
                     double b = Double.parseDouble(no2.getText().toString());
-                    ans = a * b;
+                    Expression e= new Expression(a,b);
+
+                    ans = e.multiplication();
+
                 }
             }
         });
@@ -101,8 +109,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     double a = Double.parseDouble(no1.getText().toString());
                     double b = Double.parseDouble(no2.getText().toString());
-                    if (b != 0)
-                        ans = a / b;
+                    if (b != 0) {
+                        Expression e= new Expression(a,b);
+
+                        ans = e.division();
+                    }
+
                     else
                         Toast.makeText(getApplicationContext(), "Enter Valid Numbers", Toast.LENGTH_SHORT).show();
                 }
